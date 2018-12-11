@@ -26,8 +26,6 @@ use backend\models\VariabelKota;
  * @property integer $jumlah_murid_lulus_sma
  * @property integer $jumlah_murid_tingkat3
  * @property integer $jumlah_murid_mengulang
- * @property integer $letak_lintang
- * @property integer $letak_bujur
  *
  * @property Kota $idKota
  */
@@ -48,8 +46,8 @@ class VariabelKota extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'letak_lintang', 'letak_bujur'], 'required'],
-            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'letak_lintang', 'letak_bujur'], 'integer'],
+            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'required'],
+            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'integer'],
             [['id_kota'], 'exist', 'skipOnError' => true, 'targetClass' => Kota::className(), 'targetAttribute' => ['id_kota' => 'id']],
         ];
     }
@@ -77,8 +75,8 @@ class VariabelKota extends \yii\db\ActiveRecord
             'jumlah_murid_lulus_sma' => 'Jumlah Murid Lulus SMA',
             'jumlah_murid_tingkat3' => 'Jumlah Murid Tingkat III',
             'jumlah_murid_mengulang' => 'Jumlah Murid Mengulang',
-            'letak_lintang' => 'Letak Lintang',
-            'letak_bujur' => 'Letak Bujur',
+            'longitude' => 'Longitude',
+            'latitide' => 'Latitude',
         ];
     }
 

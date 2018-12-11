@@ -43,8 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'jumlah_murid_lulus_sma',
             // 'jumlah_murid_tingkat3',
             // 'jumlah_murid_mengulang',
-            // 'letak_lintang',
-            // 'letak_bujur',
+            // 'longitude',
+            // 'latitude',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

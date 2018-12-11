@@ -135,6 +135,7 @@ class IndikatorController extends Controller
             $indikator->id_varkota = $value->id;
        }
            $indikator->apk = $value->jumlah_murid_sma / $value->jumlah_penduduk_usia_sma;
+           $indikator->tahun = $value->tahun;
            $indikator->save();
        }
         return $this->render('apk', [
@@ -269,10 +270,10 @@ class IndikatorController extends Controller
         ]);
     }
 
-    public function actionCreateRkb()
+    public function actionCreatePrkb()
     {
         $searchModel = new IndikatorSearch();
-        $dataProvider = $searchModel->createRkb();
+        $dataProvider = $searchModel->createPrkb();
         foreach ($dataProvider->getModels() as $key => $value) {
         if($value->indikator){
            $indikator = $value->indikator;
@@ -281,19 +282,19 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->ruang_kelas_baik = $value->jumlah_ruang_kelas / $value->jumlah_ruang_kelas_baik;
+           $indikator->persentase_ruang_kelas_baik = $value->jumlah_ruang_kelas / $value->jumlah_ruang_kelas_baik;
            $indikator->save();
        }
-        return $this->render('rkb', [
+        return $this->render('prkb', [
              'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
-    public function actionCreateGlm()
+    public function actionCreatePglm()
     {
         $searchModel = new IndikatorSearch();
-        $dataProvider = $searchModel->createGlm();
+        $dataProvider = $searchModel->createPglm();
         foreach ($dataProvider->getModels() as $key => $value) {
         if($value->indikator){
            $indikator = $value->indikator;
@@ -302,10 +303,10 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->guru_layak_mengajar = $value->jumlah_gurudg_profesi_mengajar / $value->jumlah_guru;
+           $indikator->persentase_guru_layak_mengajar = $value->jumlah_gurudg_profesi_mengajar / $value->jumlah_guru;
            $indikator->save();
        }
-        return $this->render('glm', [
+        return $this->render('pglm', [
              'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);

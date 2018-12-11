@@ -46,9 +46,9 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'jumlah_murid_mengulang')->textInput() ?>
 
-    <?= $form->field($model, 'letak_lintang')->textInput() ?>
+    <?= $form->field($model, 'longitude')->textInput() ?>
 
-    <?= $form->field($model, 'letak_bujur')->textInput() ?>
+    <?= $form->field($model, 'latitude')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

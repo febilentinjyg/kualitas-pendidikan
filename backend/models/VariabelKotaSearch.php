@@ -18,7 +18,7 @@ class VariabelKotaSearch extends VariabelKota
     public function rules()
     {
         return [
-            [['id', 'id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'letak_lintang', 'letak_bujur'], 'integer'],
+            [['id', 'id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'integer'],
             [['kota'], 'safe'],
         ];
     }
@@ -76,8 +76,8 @@ class VariabelKotaSearch extends VariabelKota
             'jumlah_murid_lulus_sma' => $this->jumlah_murid_lulus_sma,
             'jumlah_murid_tingkat3' => $this->jumlah_murid_tingkat3,
             'jumlah_murid_mengulang' => $this->jumlah_murid_mengulang,
-            'letak_lintang' => $this->letak_lintang,
-            'letak_bujur' => $this->letak_bujur,
+            'longitude' => $this->longitude,
+            'latitude' => $this->latitude,
         ])
         ->innerJoin('kota', 'kota.id = variabel_kota.id_kota')
         ->andFilterWhere([

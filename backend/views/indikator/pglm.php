@@ -33,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             //'jumlah_murid_sma',
             //'jumlah_penduduk_usia_sma',
             [
-                'label'  => 'Guru Layak Mengajar',
+                'label'  => 'Persentase Guru Layak Mengajar',
                 'value' => function($model){
-                    return $model->indikator->guru_layak_mengajar;
+                    return $model->indikator->persentase_guru_layak_mengajar;
                 }
             ],
             // 'apk',

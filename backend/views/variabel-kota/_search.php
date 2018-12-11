@@ -49,9 +49,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'jumlah_murid_mengulang') ?>
 
-    <?php // echo $form->field($model, 'letak_lintang') ?>
+    <?php // echo $form->field($model, 'longitude') ?>
 
-    <?php // echo $form->field($model, 'letak_bujur') ?>
+    <?php // echo $form->field($model, 'latitude') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

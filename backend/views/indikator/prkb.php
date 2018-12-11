@@ -33,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             //'jumlah_murid_sma',
             //'jumlah_penduduk_usia_sma',
             [
-                'label'  => 'Ruang Kelas Baik',
+                'label'  => 'Persentase Ruang Kelas Baik',
                 'value' => function($model){
-                    return $model->indikator->ruang_kelas_baik;
+                    return $model->indikator->persentase_ruang_kelas_baik;
                 }
             ],
             // 'apk',

@@ -47,7 +47,7 @@ class Indikator extends \yii\db\ActiveRecord
         return [
             // [['tahun', 'apk', 'apm', 'tingkat_pelayanan_sekolah', 'rasio_murid_guru', 'rasio_murid_sekolah', 'rasio_murid_kelas', 'rasio_kelas_ruang_kelas', 'ruang_kelas_baik', 'guru_layak_mengajar', 'angka_melanjutkan', 'angka_lulusan', 'angka_putus_sekolah', 'angka_mengulang', 'rasio_input_output'], 'required'],
             [['tahun'], 'integer'],
-            [['apk', 'apm', 'tingkat_pelayanan_sekolah', 'rasio_murid_guru', 'rasio_murid_sekolah', 'rasio_murid_kelas', 'rasio_kelas_ruang_kelas', 'ruang_kelas_baik', 'guru_layak_mengajar', 'angka_melanjutkan', 'angka_lulusan', 'angka_putus_sekolah', 'angka_mengulang', 'rasio_input_output'], 'number'],
+            [['apk', 'apm', 'tingkat_pelayanan_sekolah', 'rasio_murid_guru', 'rasio_murid_sekolah', 'rasio_murid_kelas', 'rasio_kelas_ruang_kelas', 'persentase_ruang_kelas_baik', 'persentase_guru_layak_mengajar', 'angka_melanjutkan', 'angka_lulusan', 'angka_putus_sekolah', 'angka_mengulang', 'rasio_input_output'], 'number'],
         ];
     }
 
@@ -66,8 +66,8 @@ class Indikator extends \yii\db\ActiveRecord
             'rasio_murid_sekolah' => 'Rasio Murid Sekolah',
             'rasio_murid_kelas' => 'Rasio Murid Kelas',
             'rasio_kelas_ruang_kelas' => 'Rasio Kelas Ruang Kelas',
-            'ruang_kelas_baik' => 'Ruang Kelas Baik',
-            'guru_layak_mengajar' => 'Guru Layak Mengajar',
+            'persentase_ruang_kelas_baik' => 'Persentase Ruang Kelas Baik',
+            'persentase_guru_layak_mengajar' => 'Persentase Guru Layak Mengajar',
             'angka_melanjutkan' => 'Angka Melanjutkan',
             'angka_lulusan' => 'Angka Lulusan',
             'angka_putus_sekolah' => 'Angka Putus Sekolah',
