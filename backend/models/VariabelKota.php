@@ -47,7 +47,8 @@ class VariabelKota extends \yii\db\ActiveRecord
     {
         return [
             [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'required'],
-            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'integer'],
+            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang'], 'integer'],
+            [['longitude', 'latitude'], 'double'],
             [['id_kota'], 'exist', 'skipOnError' => true, 'targetClass' => Kota::className(), 'targetAttribute' => ['id_kota' => 'id']],
         ];
     }

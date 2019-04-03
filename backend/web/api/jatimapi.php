@@ -9,7 +9,7 @@
 	$servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "dataprb_yii2";
+    $dbname = "tugasakhir";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 	$sql = "SELECT nama_kabupaten, AsText(koordinat) as koordinat

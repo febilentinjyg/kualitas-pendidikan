@@ -122,6 +122,7 @@ class IndikatorController extends Controller
         }
     }
 
+
     public function actionCreateApk()
     {
         $searchModel = new IndikatorSearch();
@@ -134,12 +135,14 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->apk = $value->jumlah_murid_sma / $value->jumlah_penduduk_usia_sma;
+           $indikator->apk = $value->jumlah_murid_sma / $value->jumlah_penduduk_usia_sma * 100;
            $indikator->tahun = $value->tahun;
            $indikator->save();
        }
-        return $this->render('apk', [
-             'searchModel' => $searchModel,
+
+        return $this->render('index', [
+            'active' => 'apk',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -156,11 +159,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->apm = $value->jumlah_murid_usia_sma / $value->jumlah_penduduk_usia_sma;
+           $indikator->apm = $value->jumlah_murid_usia_sma / $value->jumlah_penduduk_usia_sma * 100;
            $indikator->save();
        }
-        return $this->render('apm', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'apm',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -180,8 +184,9 @@ class IndikatorController extends Controller
            $indikator->tingkat_pelayanan_sekolah = $value->jumlah_penduduk_usia_sma / $value->jumlah_gedung_sma;
            $indikator->save();
        }
-        return $this->render('tps', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'tps',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -201,8 +206,9 @@ class IndikatorController extends Controller
            $indikator->rasio_murid_guru = $value->jumlah_murid_sma / $value->jumlah_guru;
            $indikator->save();
        }
-        return $this->render('rmg', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'rmg',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -222,8 +228,9 @@ class IndikatorController extends Controller
            $indikator->rasio_murid_sekolah = $value->jumlah_murid_sma / $value->jumlah_gedung_sma;
            $indikator->save();
        }
-        return $this->render('rms', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'rms',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -243,8 +250,9 @@ class IndikatorController extends Controller
            $indikator->rasio_murid_kelas = $value->jumlah_murid_sma / $value->jumlah_kelas;
            $indikator->save();
        }
-        return $this->render('rmk', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'rmk',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -264,8 +272,9 @@ class IndikatorController extends Controller
            $indikator->rasio_kelas_ruang_kelas = $value->jumlah_kelas / $value->jumlah_ruang_kelas;
            $indikator->save();
        }
-        return $this->render('rkrk', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'rkrk',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -282,11 +291,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->persentase_ruang_kelas_baik = $value->jumlah_ruang_kelas / $value->jumlah_ruang_kelas_baik;
+           $indikator->persentase_ruang_kelas_baik = $value->jumlah_ruang_kelas_baik / $value->jumlah_ruang_kelas * 100;
            $indikator->save();
        }
-        return $this->render('prkb', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'prkb',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -303,11 +313,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->persentase_guru_layak_mengajar = $value->jumlah_gurudg_profesi_mengajar / $value->jumlah_guru;
+           $indikator->persentase_guru_layak_mengajar = $value->jumlah_gurudg_profesi_mengajar / $value->jumlah_guru * 100;
            $indikator->save();
        }
-        return $this->render('pglm', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'pglm',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -324,11 +335,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->angka_melanjutkan = $value->jumlah_murid_baru / $value->jumlah_lulusan_sltp;
+           $indikator->angka_melanjutkan = $value->jumlah_murid_baru / $value->jumlah_lulusan_sltp * 100;
            $indikator->save();
        }
-        return $this->render('am', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'am',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -345,11 +357,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->angka_lulusan = $value->jumlah_murid_lulus_sma / $value->jumlah_murid_tingkat3;
+           $indikator->angka_lulusan = $value->jumlah_murid_lulus_sma / $value->jumlah_murid_tingkat3 * 100;
            $indikator->save();
        }
-        return $this->render('al', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'al',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -366,11 +379,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->angka_putus_sekolah = $value->jumlah_murid_putus_sekolah / $value->jumlah_murid_sma;
+           $indikator->angka_putus_sekolah = $value->jumlah_murid_putus_sekolah / $value->jumlah_murid_sma * 100;
            $indikator->save();
        }
-        return $this->render('aps', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'aps',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -387,11 +401,12 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->angka_mengulang = $value->jumlah_murid_mengulang / $value->jumlah_murid_sma;
+           $indikator->angka_mengulang = $value->jumlah_murid_mengulang / $value->jumlah_murid_sma * 100;
            $indikator->save();
        }
-        return $this->render('au', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'au',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -411,8 +426,9 @@ class IndikatorController extends Controller
            $indikator->rasio_input_output = $value->jumlah_murid_lulus_sma / $value->jumlah_murid_baru;
            $indikator->save();
        }
-        return $this->render('rio', [
-             'searchModel' => $searchModel,
+        return $this->render('index', [
+            'active' => 'rio',
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

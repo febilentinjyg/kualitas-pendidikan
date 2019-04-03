@@ -24,34 +24,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            // 'nama',
-             [
+            [
                 'attribute'=>'Kota /Kabupaten',
                 'value'=>'idKota.nama',
             ],
-            //'jumlah_murid_sma',
-            //'jumlah_penduduk_usia_sma',
             [
                 'label'  => 'APK',
                 'value' => function($model){
                     return $model->indikator->apk;
                 }
             ],
-            // 'apk',
-            // 'rasio_murid_guru',
-            // 'rasio_murid_sekolah',
-            // 'rasio_murid_kelas',
-            // 'rasio_kelas_ruang_kelas',
-            // 'ruang_kelas_baik',
-            // 'guru_layak_mengajar',
-            // 'angka_melanjutkan',
-            // 'angka_lulusan',
-            // 'angka_putus_sekolah',
-            // 'angka_mengulang',
-            // 'rasio_input_output',
-
-            //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

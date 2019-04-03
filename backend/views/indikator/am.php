@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\IndikatorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Indikator Angka Mengulang';
+$this->title = 'Indikator Angka Melanjutkan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="indikator-index">
@@ -33,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             //'jumlah_murid_sma',
             //'jumlah_penduduk_usia_sma',
             [
-                'label'  => 'Angka Mengulang',
+                'label'  => 'Angka Melanjutkan',
                 'value' => function($model){
-                    return $model->indikator->angka_mengulang;
+                    return $model->indikator->angka_melanjutkan;
                 }
             ],
             // 'apk',

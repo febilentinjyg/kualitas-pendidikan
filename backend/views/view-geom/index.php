@@ -7,11 +7,11 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'PRB | Jawa Timur';
+$this->title = 'Kualitas Pendidikan';
 ?>
 
 <head>
-  <h3>Peta Risiko Bencana Tanah Longsor</h3>
+  <h3>Peta Kualitas Pendidikan Kota/Kab Jawa Timur</h3>
 </head>
 
 <div id="map" style="height: 500px; width: 100%"></div>
@@ -29,7 +29,7 @@ $this->title = 'PRB | Jawa Timur';
       }
     };
 
-    xhttp.open("GET", "http://127.0.0.1:8080/PetaRisiko/frontend/web/api/jatimapi.php", true);
+    xhttp.open("GET", "http://127.0.0.1:8080/tugasAkhir/backend/web/api/jatimapi.php", true);
     xhttp.send();
   }
 
@@ -104,7 +104,7 @@ async defer></script>
 
 <div class="col-md-12" style="padding-top: 10px; padding-bottom: 10px;">
   <h4>Legend</h4>
-  <img class="img" src="http://127.0.0.1:8080/PetaRisiko/frontend/web/assets/2d0fde4f/img/rendah.png" style="width: 40px;"> Rendah</br>
-  <img class="img" src="http://127.0.0.1:8080/PetaRisiko/frontend/web/assets/2d0fde4f/img/sedang.png" style="width: 40px;"> Sedang</br>
-  <img class="img" src="http://127.0.0.1:8080/PetaRisiko/frontend/web/assets/2d0fde4f/img/tinggi.png" style="width: 40px;"> Tinggi</br>
+  <img class="img" src="http://127.0.0.1:8080/tugasAkhir/backend/web/assets/2d0fde4f/img/rendah.png" style="width: 40px;"> Kurang Baik</br>
+  <img class="img" src="http://127.0.0.1:8080/tugasAkhir/backend/web/assets/2d0fde4f/img/sedang.png" style="width: 40px;"> Baik</br>
+  <img class="img" src="http://127.0.0.1:8080/tugasAkhir/backend/web/assets/2d0fde4f/img/tinggi.png" style="width: 40px;"> Sangat Baik</br>
 </div>

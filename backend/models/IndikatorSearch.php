@@ -263,7 +263,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiApk()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.apk AS apk, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.apk AS apk, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
 // -------------------------------------------------------------------
@@ -280,7 +280,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiApm()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.apm AS apm, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.apm AS apm, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
 
@@ -298,7 +298,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiTps()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.tingkat_pelayanan_sekolah AS tps, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.tingkat_pelayanan_sekolah AS tps, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
 
@@ -316,7 +316,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiRmg()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_guru AS rmg, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_guru AS rmg, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
 
@@ -334,7 +334,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiRms()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_sekolah AS rms, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_sekolah AS rms, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -351,7 +351,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiRmk()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_kelas AS rmk, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_murid_kelas AS rmk, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -368,7 +368,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiRkrk()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_kelas_ruang_kelas AS rkrk, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_kelas_ruang_kelas AS rkrk, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -385,7 +385,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiPrkb()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.persentase_ruang_kelas_baik AS prkb, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.persentase_ruang_kelas_baik AS prkb, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -402,7 +402,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiPglm()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.persentase_guru_layak_mengajar AS pglm, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.persentase_guru_layak_mengajar AS pglm, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -419,7 +419,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiAm()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_melanjutkan AS am, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_melanjutkan AS am, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -436,7 +436,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiAl()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_lulusan AS al, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_lulusan AS al, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -453,7 +453,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiAps()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_putus_sekolah AS aps, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_putus_sekolah AS aps, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -470,7 +470,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiAu()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_mengulang AS au, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.angka_mengulang AS au, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
     // -------------------------------------------------------------------
@@ -487,7 +487,7 @@ class IndikatorSearch extends Indikator
 
     public function ambilNilaiRio()
     {
-        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_input_output AS rio, kota.nama AS nama from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
+        $query = Yii::$app->db->createCommand(' SELECT indikator.rasio_input_output AS rio, kota.nama AS nama, kota.id AS id_kota from indikator INNER JOIN variabel_kota on indikator.id_varkota = variabel_kota.id INNER JOIN kota on kota.id = variabel_kota.id_kota')->queryAll();
         return $query;
     }
 }
