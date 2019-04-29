@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Rasio Murid Sekolah',
                 'value' => function($model){
-                    return $model->indikator->rasio_murid_sekolah;
+                    return round($model->indikator->rasio_murid_sekolah, 3);
                 }
             ],
             // 'apk',

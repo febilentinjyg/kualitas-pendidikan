@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Rasio Kelas Ruang Kelas',
                 'value' => function($model){
-                    return $model->indikator->rasio_kelas_ruang_kelas;
+                    return round($model->indikator->rasio_kelas_ruang_kelas, 3);
                 }
             ],
             // 'apk',

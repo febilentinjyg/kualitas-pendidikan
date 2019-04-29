@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Angka Mengulang',
                 'value' => function($model){
-                    return $model->indikator->angka_mengulang;
+                    return round($model->indikator->angka_mengulang, 3) . '  %';
                 }
             ],
             // 'apk',

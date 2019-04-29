@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Persentase Guru Layak Mengajar',
                 'value' => function($model){
-                    return $model->indikator->persentase_guru_layak_mengajar;
+                    return round($model->indikator->persentase_guru_layak_mengajar, 3) . '  %';
                 }
             ],
             // 'apk',

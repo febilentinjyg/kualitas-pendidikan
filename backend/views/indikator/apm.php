@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'APM',
                 'value' => function($model){
-                    return $model->indikator->apm;
+                    return round($model->indikator->apm, 3) . '  %';
                 }
             ],
             // 'apk',

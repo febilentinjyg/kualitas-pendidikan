@@ -95,7 +95,7 @@ class ApiController extends \yii\web\Controller
     public function actionTingkatPelayanan()
     {
         $model = NilaiDefuzzifikasiTigaVariabel::find()
-            ->select(['id_kota as id', 'nilai_defuzzifikasi_tiga_variabel.defuzzifikasi_tingkat_pelayanan', 'kota.nama as nama'])
+            ->select(['id_kota as id', 'nilai_defuzzifikasi_tiga_variabel.defuzzifikasi_tingkat_pelayanan as value', 'kota.nama as nama'])
             ->innerJoin('kota', 'kota.id = nilai_defuzzifikasi_tiga_variabel.id_kota')
             ->asArray()
             ->all();

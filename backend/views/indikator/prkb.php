@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Persentase Ruang Kelas Baik',
                 'value' => function($model){
-                    return $model->indikator->persentase_ruang_kelas_baik;
+                    return round($model->indikator->persentase_ruang_kelas_baik, 3) . '  %';
                 }
             ],
             // 'apk',

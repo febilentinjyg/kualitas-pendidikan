@@ -1,0 +1,7 @@
+.legend i {
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}

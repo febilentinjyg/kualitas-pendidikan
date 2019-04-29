@@ -37,7 +37,7 @@ class VariabelKota extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'variabel_kota';
+        return 'variabel_kota_baru';
     }
 
     /**
@@ -46,8 +46,8 @@ class VariabelKota extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang', 'longitude', 'latitude'], 'required'],
-            [['id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang'], 'integer'],
+            [['id_kota', 'tahun', 'jumlah_murid_usia_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_sma', 'jumlah_murid_smp_tingkat3_ts', 'jumlah_murid_baru_tingkat1', 'jumlah_sekolah', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_murid_mengulang', 'jumlah_murid_sma_ts', 'jumlah_murid_putus_sekolah', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_guru_layak_mengajar', 'jumlah_guru', 'jumlah_ruang_kelas_baik', 'longitude', 'latitude'], 'required'],
+            [['id_kota', 'tahun', 'jumlah_murid_usia_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_sma', 'jumlah_murid_smp_tingkat3_ts', 'jumlah_murid_baru_tingkat1', 'jumlah_sekolah', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_murid_mengulang', 'jumlah_murid_sma_ts', 'jumlah_murid_putus_sekolah', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_guru_layak_mengajar', 'jumlah_guru', 'jumlah_ruang_kelas_baik'], 'integer'],
             [['longitude', 'latitude'], 'double'],
             [['id_kota'], 'exist', 'skipOnError' => true, 'targetClass' => Kota::className(), 'targetAttribute' => ['id_kota' => 'id']],
         ];
@@ -62,20 +62,22 @@ class VariabelKota extends \yii\db\ActiveRecord
             'id' => 'ID',
             'id_kota' => 'Id Kota',
             'tahun' => 'Tahun',
-            'jumlah_murid_sma' => 'Jumlah Murid SMA',
-            'jumlah_penduduk_usia_sma' => 'Jumlah Penduduk Usia SMA',
             'jumlah_murid_usia_sma' => 'Jumlah Murid Usia SMA',
-            'jumlah_gedung_sma' => 'Jumlah Gedung SMA',
-            'jumlah_guru' => 'Jumlah Guru',
+            'jumlah_penduduk_usia_sma' => 'Jumlah Penduduk Usia SMA',
+            'jumlah_murid_sma' => 'Jumlah MUrid SMA',
+            'jumlah_murid_smp_tingkat3_ts' => 'Jumlah Murid SMP Tingkat III Tahun Sebelumnya',
+            'jumlah_murid_baru_tingkat1' => 'Jumlah Murid Baru Tingkat I',
+            'jumlah_sekolah' => 'Jumlah Sekolah',
             'jumlah_kelas' => 'Jumlah Kelas',
             'jumlah_ruang_kelas' => 'Jumlah Ruang Kelas',
-            'jumlah_ruang_kelas_baik' => 'Jumlah Ruang Kelas Baik',
-            'jumlah_gurudg_profesi_mengajar' => 'Jumlah Guru dengan Profesi Mengajar',
-            'jumlah_murid_baru' => 'Jumlah Murid Baru',
-            'jumlah_lulusan_sltp' => 'Jumlah Lulusan SLTP',
+            'jumlah_murid_mengulang' => 'Jumlah Murid Mengulang',
+            'jumlah_murid_sma_ts' => 'Jumlah Murid SMA Tahun Sebelumnya',
+            'jumlah_murid_putus_sekolah' => 'Jumlah Murid Putus Sekolah',
             'jumlah_murid_lulus_sma' => 'Jumlah Murid Lulus SMA',
             'jumlah_murid_tingkat3' => 'Jumlah Murid Tingkat III',
-            'jumlah_murid_mengulang' => 'Jumlah Murid Mengulang',
+            'jumlah_guru_layak_mengajar' => 'Jumlah Guru Layak Mengajar',
+            'jumlah_guru' => 'Jumlah Guru',
+            'jumlah_ruang_kelas_baik' => 'Jumlah Ruang Kelas Baik',
             'longitude' => 'Longitude',
             'latitide' => 'Latitude',
         ];

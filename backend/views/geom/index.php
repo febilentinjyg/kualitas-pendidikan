@@ -12,11 +12,11 @@ use yii\helpers\Url;
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Kategori</label>
-						<select class="form-control">
-							<option>KUALITAS PENDIDIKAN</option>
-							<option>Angka Partisipasi</option>
-							<option>Tingkat Pelayanan</option>
-							<option>Kualitas Output</option>
+						<select id="map-dropdown" class="form-control">
+							<option value="kualitas-pendidikan">KUALITAS PENDIDIKAN</option>
+							<option value="angka-partisipasi">Angka Partisipasi</option>
+							<option value="tingkat-pelayanan">Tingkat Pelayanan</option>
+							<option value="kualitas-output">Kualitas Output</option>
 						</select>
 					</div>
 					<div id="map" style="height: 430px;"></div>
@@ -29,6 +29,7 @@ use yii\helpers\Url;
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
    crossorigin=""/>
+<link rel="stylesheet" href="<?= Url::base(true) ?>/css/map.css">
 <script src="/tugasAkhir/backend/web/assets/ea6e45f8/jquery.js"></script>
 
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"

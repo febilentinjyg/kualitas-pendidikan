@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'  => 'Rasio Input Output',
                 'value' => function($model){
-                    return $model->indikator->rasio_input_output;
+                    return round($model->indikator->rasio_input_output, 3);
                 }
             ],
             // 'apk',
