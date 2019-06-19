@@ -357,7 +357,7 @@ class IndikatorController extends Controller
             $indikator = new Indikator();
             $indikator->id_varkota = $value->id;
        }
-           $indikator->angka_lulusan = $value->jumlah_murid_lulus_sma / $value->jumlah_murid_tingkat3 * 100;
+           $indikator->angka_lulusan = $value->jumlah_murid_lulus_sma / $value->jumlah_murid_ikut_ujian * 100;
            $indikator->save();
        }
         return $this->render('index', [

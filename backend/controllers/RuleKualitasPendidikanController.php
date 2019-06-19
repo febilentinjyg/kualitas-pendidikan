@@ -44,6 +44,51 @@ class RuleKualitasPendidikanController extends Controller
             ->asArray()
             ->all();
 
+        $modelKp = new RuleKualitasPendidikan();
+        $batas = [
+            'ap' => [floatval($modelKp->cariMinAp()), floatval($modelKp->cariMaxAp())],
+            'tp' => [floatval($modelKp->cariMinTp()), floatval($modelKp->cariMaxTp())],
+            'ko' => [floatval($modelKp->cariMinKo()), floatval($modelKp->cariMaxKo())]
+        ];
+
+        foreach ($batas as $key => $value) {
+            $bagi = ($value[1] - $value[0]) / 3;
+            $batas[$key] = [
+                [$value[0], $value[0] + (1 * $bagi)],
+                [$value[0] + (1 * $bagi), $value[0] + (2 * $bagi)],
+                [$value[0] + (2 * $bagi), $value[1]]
+            ];
+        }
+
+        foreach ($model as $key => $value) {
+            $nilai = floatval($value['defuzzifikasi_angka_partisipasi']);
+            foreach ($batas['ap'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_angka_partisipasi'] = $key1+1;
+            }
+
+            $nilai = floatval($value['defuzzifikasi_tingkat_pelayanan']);
+            foreach ($batas['tp'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_tingkat_pelayanan'] = $key1+1;
+            }
+
+            $nilai = floatval($value['defuzzifikasi_kualitas_output']);
+            foreach ($batas['ko'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_kualitas_output'] = $key1+1;
+            } 
+
+            $rule = RuleKualitasPendidikan::find()
+            ->select(['rule_kualitas_pendidikan.*'])
+            ->where(['kriteria_angka_partisipasi'=> $model[$key]['kelas_defuzzifikasi_angka_partisipasi']])
+            ->andWhere(['kriteria_tingkat_pelayanan' => $model[$key]['kelas_defuzzifikasi_tingkat_pelayanan']])
+            ->andWhere(['kriteria_kualitas_output' => $model[$key]['kelas_defuzzifikasi_kualitas_output']])
+            ->one();
+
+            $model[$key]['nilai_kualitas_pendidikan'] = $rule->nilai_kualitas_pendidikan;
+        }
+
         return $this->render('index', [
             'active' => 'nilaibobot',
             'output'=> $model]);
@@ -195,6 +240,64 @@ class RuleKualitasPendidikanController extends Controller
             'fuzzyData' => $fuzzyData,
         ]);
 
+    }
+
+    public function actionGrafik()
+    {
+        $model = NilaiDefuzzifikasiTigaVariabel::find()
+            ->select(['nilai_defuzzifikasi_tiga_variabel.*', 'kota.nama as nama_kota'])
+            ->innerJoin('kota', 'kota.id = nilai_defuzzifikasi_tiga_variabel.id_kota')
+            ->asArray()
+            ->all();
+
+        $modelKp = new RuleKualitasPendidikan();
+        $batas = [
+            'ap' => [floatval($modelKp->cariMinAp()), floatval($modelKp->cariMaxAp())],
+            'tp' => [floatval($modelKp->cariMinTp()), floatval($modelKp->cariMaxTp())],
+            'ko' => [floatval($modelKp->cariMinKo()), floatval($modelKp->cariMaxKo())]
+        ];
+
+        foreach ($batas as $key => $value) {
+            $bagi = ($value[1] - $value[0]) / 3;
+            $batas[$key] = [
+                [$value[0], $value[0] + (1 * $bagi)],
+                [$value[0] + (1 * $bagi), $value[0] + (2 * $bagi)],
+                [$value[0] + (2 * $bagi), $value[1]]
+            ];
+        }
+
+        foreach ($model as $key => $value) {
+            $nilai = floatval($value['defuzzifikasi_angka_partisipasi']);
+            foreach ($batas['ap'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_angka_partisipasi'] = $key1+1;
+            }
+
+            $nilai = floatval($value['defuzzifikasi_tingkat_pelayanan']);
+            foreach ($batas['tp'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_tingkat_pelayanan'] = $key1+1;
+            }
+
+            $nilai = floatval($value['defuzzifikasi_kualitas_output']);
+            foreach ($batas['ko'] as $key1 => $value1) {
+                if($nilai >= $value1[0] && $nilai <= $value1[1])
+                    $model[$key]['kelas_defuzzifikasi_kualitas_output'] = $key1+1;
+            } 
+
+            $rule = RuleKualitasPendidikan::find()
+            ->select(['rule_kualitas_pendidikan.*'])
+            ->where(['kriteria_angka_partisipasi'=> $model[$key]['kelas_defuzzifikasi_angka_partisipasi']])
+            ->andWhere(['kriteria_tingkat_pelayanan' => $model[$key]['kelas_defuzzifikasi_tingkat_pelayanan']])
+            ->andWhere(['kriteria_kualitas_output' => $model[$key]['kelas_defuzzifikasi_kualitas_output']])
+            ->one();
+
+            $model[$key]['nilai_kualitas_pendidikan'] = $rule->nilai_kualitas_pendidikan;
+        }
+
+        return $this->render('index', [
+            'active' => 'grafik',
+            'output'=> $model]);
     }
 
 }

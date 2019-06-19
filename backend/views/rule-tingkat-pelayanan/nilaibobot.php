@@ -38,7 +38,7 @@ $this->title = 'Tingkat Pelayanan';
                   $i=0; 
                   foreach ($output as $key => $value) {
                       echo '<tr>';
-                      echo '<td>'.$value['id'].'</td>';
+                      echo '<td>'.($i+1).'</td>';
                       echo '<td>'.$value['nama_kota'].'</td>'; 
                       echo '<td>'.$value['rasio_murid_guru'].'</td>'; 
                       echo '<td>'.$value['rasio_murid_sekolah'].'</td>';

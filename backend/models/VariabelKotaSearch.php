@@ -18,7 +18,7 @@ class VariabelKotaSearch extends VariabelKota
     public function rules()
     {
         return [
-            [['id', 'id_kota', 'tahun', 'jumlah_murid_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_usia_sma', 'jumlah_gedung_sma', 'jumlah_guru', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_ruang_kelas_baik', 'jumlah_gurudg_profesi_mengajar', 'jumlah_murid_baru', 'jumlah_lulusan_sltp', 'jumlah_murid_lulus_sma', 'jumlah_murid_tingkat3', 'jumlah_murid_mengulang'], 'integer'],
+            [['id', 'id_kota', 'tahun', 'jumlah_murid_usia_sma', 'jumlah_penduduk_usia_sma', 'jumlah_murid_sma', 'jumlah_murid_smp_tingkat3_ts', 'jumlah_murid_baru_tingkat1', 'jumlah_sekolah', 'jumlah_kelas', 'jumlah_ruang_kelas', 'jumlah_murid_mengulang', 'jumlah_murid_sma_ts', 'jumlah_murid_putus_sekolah', 'jumlah_murid_lulus_sma', 'jumlah_murid_ikut_ujian', 'jumlah_guru_layak_mengajar', 'jumlah_guru', 'jumlah_ruang_kelas_baik'], 'integer'],
             [['longitude', 'latitude'], 'double'],
             [['kota'], 'safe'],
         ];
@@ -63,24 +63,26 @@ class VariabelKotaSearch extends VariabelKota
             'id' => $this->id,
             'id_kota' => $this->id_kota,
             'tahun' => $this->tahun,
-            'jumlah_murid_sma' => $this->jumlah_murid_sma,
-            'jumlah_penduduk_usia_sma' => $this->jumlah_penduduk_usia_sma,
             'jumlah_murid_usia_sma' => $this->jumlah_murid_usia_sma,
-            'jumlah_gedung_sma' => $this->jumlah_gedung_sma,
-            'jumlah_guru' => $this->jumlah_guru,
+            'jumlah_penduduk_usia_sma' => $this->jumlah_penduduk_usia_sma,
+            'jumlah_murid_sma' => $this->jumlah_murid_sma,
+            'jumlah_murid_smp_tingkat3_ts' => $this->jumlah_murid_smp_tingkat3_ts,
+            'jumlah_murid_baru_tingkat1' => $this->jumlah_murid_baru_tingkat1,
+            'jumlah_sekolah' => $this->jumlah_sekolah,
             'jumlah_kelas' => $this->jumlah_kelas,
             'jumlah_ruang_kelas' => $this->jumlah_ruang_kelas,
-            'jumlah_ruang_kelas_baik' => $this->jumlah_ruang_kelas_baik,
-            'jumlah_gurudg_profesi_mengajar' => $this->jumlah_gurudg_profesi_mengajar,
-            'jumlah_murid_baru' => $this->jumlah_murid_baru,
-            'jumlah_lulusan_sltp' => $this->jumlah_lulusan_sltp,
-            'jumlah_murid_lulus_sma' => $this->jumlah_murid_lulus_sma,
-            'jumlah_murid_tingkat3' => $this->jumlah_murid_tingkat3,
             'jumlah_murid_mengulang' => $this->jumlah_murid_mengulang,
+            'jumlah_murid_sma_ts' => $this->jumlah_murid_sma_ts,
+            'jumlah_murid_putus_sekolah' => $this->jumlah_murid_putus_sekolah,
+            'jumlah_murid_lulus_sma' => $this->jumlah_murid_lulus_sma,
+            'jumlah_murid_ikut_ujian' => $this->jumlah_murid_ikut_ujian,
+            'jumlah_guru_layak_mengajar' => $this->jumlah_guru_layak_mengajar,
+            'jumlah_guru' => $this->jumlah_guru,
+            'jumlah_ruang_kelas_baik' => $this->jumlah_ruang_kelas_baik,
             'longitude' => $this->longitude,
             'latitude' => $this->latitude,
         ])
-        ->innerJoin('kota', 'kota.id = variabel_kota.id_kota')
+        ->innerJoin('kota', 'kota.id = variabel_kota_baru.id_kota')
         ->andFilterWhere([
             'like', 'kota.nama', $this->kota
         ]);

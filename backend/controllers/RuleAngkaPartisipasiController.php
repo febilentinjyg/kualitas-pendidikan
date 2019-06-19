@@ -40,6 +40,7 @@ class RuleAngkaPartisipasiController extends Controller
             ->select(['indikator.*', 'kota.nama as nama_kota'])
             ->innerJoin('variabel_kota', 'variabel_kota.id = indikator.id_varkota')
             ->innerJoin('kota', 'kota.id = variabel_kota.id_kota')
+            ->orderBy('id_kota')
             ->asArray()
             ->all();
 

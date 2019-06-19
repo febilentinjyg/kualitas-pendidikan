@@ -37,7 +37,7 @@ $this->title = 'Kualitas Output';
                   $i=0; 
                   foreach ($output as $key => $value) {
                       echo '<tr>';
-                      echo '<td>'.$value['id'].'</td>';
+                      echo '<td>'.($i+1).'</td>';
                       echo '<td>'.$value['nama_kota'].'</td>'; 
                       echo '<td>'.$value['angka_melanjutkan'].'</td>'; 
                       echo '<td>'.$value['angka_lulusan'].'</td>';

@@ -39,7 +39,7 @@ $this->title = 'Indikator Pendidikan';
                 <table id="example1" class="table table-bordered table-striped" style="width:2500px !important;">
                     <thead>
                         <tr >
-                            <th>Nama Kota/Kabupaten</th>
+                            <th>Kota/Kabupaten</th>
                             <th>Kategori APK</th>
                             <th>Kategori APM</th>
                             <th>Kategori TPS</th>

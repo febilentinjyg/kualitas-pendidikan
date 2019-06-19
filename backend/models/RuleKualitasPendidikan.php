@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use backend\models\NilaiDefuzzifikasiTigaVariabel;
 
 /**
  * This is the model class for table "rule_kualitas_pendidikan".
@@ -46,5 +47,39 @@ class RuleKualitasPendidikan extends \yii\db\ActiveRecord
             'kriteria_tingkat_pelayanan' => 'Kriteria Tingkat Pelayanan',
             'nilai_kualitas_pendidikan' => 'Nilai Kualitas Pendidikan',
         ];
+    }
+
+//-------------------------------------------------------------------------------------
+    public function cariMinAp()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->min('defuzzifikasi_angka_partisipasi');
+    }
+
+    public function cariMaxAp()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->max('defuzzifikasi_angka_partisipasi');
+    }
+
+
+//-------------------------------------------------------------------------------------
+    public function cariMinTp()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->min('defuzzifikasi_tingkat_pelayanan');
+    }
+
+    public function cariMaxTp()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->max('defuzzifikasi_tingkat_pelayanan');
+    }
+
+//-------------------------------------------------------------------------------------
+    public function cariMinKo()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->min('defuzzifikasi_kualitas_output');
+    }
+
+    public function cariMaxKo()
+    {
+        return NilaiDefuzzifikasiTigaVariabel::find()->max('defuzzifikasi_kualitas_output');
     }
 }

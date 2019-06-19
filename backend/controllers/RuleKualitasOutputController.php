@@ -48,6 +48,7 @@ class RuleKualitasOutputController extends \yii\web\Controller
             ->select(['indikator.*', 'kota.nama as nama_kota'])
             ->innerJoin('variabel_kota', 'variabel_kota.id = indikator.id_varkota')
             ->innerJoin('kota', 'kota.id = variabel_kota.id_kota')
+            ->orderBy('id_kota')
             ->asArray()
             ->all();
 
@@ -210,6 +211,9 @@ class RuleKualitasOutputController extends \yii\web\Controller
                 $fuzzyPembilang += $ruleItem['nilai_kualitas_output'] * min($fuzzy);
                 $fuzzyPenyebut += min($fuzzy);
             }
+            // if($fuzzyPenyebut !== 0) {
+            //     $fuzzyData[] = $fuzzyPembilang / $fuzzyPenyebut;
+            // }
             $fuzzyData[] = $fuzzyPembilang / $fuzzyPenyebut;
             $model_defuzzifikasi = NilaiDefuzzifikasiTigaVariabel::find()->where(['id_kota'=>$kotaItem->id])->one();
             $model_defuzzifikasi->defuzzifikasi_kualitas_output = $fuzzyPembilang / $fuzzyPenyebut;

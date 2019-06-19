@@ -1,5 +1,21 @@
 <?php
 use yii\helpers\Url;
+$this->registerJs(<<<JS
+    $('.show-loading').click(function(){
+      $('.box-body').waitMe({
+        effect : 'bounce',
+        text : 'Loading...',
+        bg : 'rgba(255,255,255,0.7)',
+        color : '#000',
+        maxSize : '',
+        waitTime : -1,
+        textPos : 'vertical',
+        fontSize : '',
+        source : ''
+      });
+    })
+JS
+);
 ?>
 <h1 align="center">Fuzzy Tingkat Pelayanan</h1>
 <div class="nav-tabs-custom">
@@ -8,31 +24,31 @@ use yii\helpers\Url;
                 <?php if ($active=='rule_tp') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-tingkat-pelayanan/rule']) ?>'>Aturan</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-tingkat-pelayanan/rule']) ?>'>Aturan</a></li>
               
               <li
               <?php if ($active=='nilaibobot') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-tingkat-pelayanan/view-bobot']) ?>'>Nilai Bobot</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-tingkat-pelayanan/view-bobot']) ?>'>Nilai Bobot</a></li>
 
               <li
               <?php if ($active=='fuzzifikasi_tp') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-tingkat-pelayanan/nilai-fuzzy-tingkat-pelayanan']) ?>'>Fuzzifikasi</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-tingkat-pelayanan/nilai-fuzzy-tingkat-pelayanan']) ?>'>Fuzzifikasi</a></li>
 
               <li
               <?php if ($active=='inferensi_fuzzy_tp') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-tingkat-pelayanan/inferensi-fuzzy']) ?>'>Inferensi Fuzzy</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-tingkat-pelayanan/inferensi-fuzzy']) ?>'>Inferensi Fuzzy</a></li>
 
               <li
               <?php if ($active=='defuzzifikasi_tp') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-tingkat-pelayanan/defuzzifikasi']) ?>'>Defuzzifikasi</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-tingkat-pelayanan/defuzzifikasi']) ?>'>Defuzzifikasi</a></li>
 
             </ul>
             

@@ -45,7 +45,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'jumlah_murid_lulus_sma') ?>
 
-    <?php // echo $form->field($model, 'jumlah_murid_tingkat3') ?>
+    <?php // echo $form->field($model, 'jumlah_murid_ikut_ujian') ?>
 
     <?php // echo $form->field($model, 'jumlah_murid_mengulang') ?>
 

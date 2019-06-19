@@ -1,5 +1,21 @@
 <?php
 use yii\helpers\Url;
+$this->registerJs(<<<JS
+    $('.show-loading').click(function(){
+      $('.box-body').waitMe({
+        effect : 'bounce',
+        text : 'Loading...',
+        bg : 'rgba(255,255,255,0.7)',
+        color : '#000',
+        maxSize : '',
+        waitTime : -1,
+        textPos : 'vertical',
+        fontSize : '',
+        source : ''
+      });
+    })
+JS
+);
 ?>
 <h1 align="center">Fuzzy Kualitas Output</h1>
 <div class="nav-tabs-custom">
@@ -8,31 +24,31 @@ use yii\helpers\Url;
                 <?php if ($active=='rule_ko') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-kualitas-output/rule']) ?>'>Aturan</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-kualitas-output/rule']) ?>'>Aturan</a></li>
               
               <li
               <?php if ($active=='nilaibobot') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-kualitas-output/view-bobot']) ?>'>Nilai Bobot</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-kualitas-output/view-bobot']) ?>'>Nilai Bobot</a></li>
 
               <li
               <?php if ($active=='fuzzifikasi_ko') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-kualitas-output/nilai-fuzzy-kualitas-output']) ?>'>Fuzzifikasi</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-kualitas-output/nilai-fuzzy-kualitas-output']) ?>'>Fuzzifikasi</a></li>
 
               <li
               <?php if ($active=='inferensi_fuzzy_ko') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-kualitas-output/inferensi-fuzzy']) ?>'>Inferensi Fuzzy</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-kualitas-output/inferensi-fuzzy']) ?>'>Inferensi Fuzzy</a></li>
 
               <li
               <?php if ($active=='defuzzifikasi_ko') {
                   echo 'class="active"';
                 } ?>>
-                <a href='<?= Url::to(['rule-kualitas-output/defuzzifikasi']) ?>'>Defuzzifikasi</a></li>
+                <a class="show-loading" href='<?= Url::to(['rule-kualitas-output/defuzzifikasi']) ?>'>Defuzzifikasi</a></li>
             </ul>
             
             <div class="tab-content">

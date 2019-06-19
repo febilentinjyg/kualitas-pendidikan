@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'id_kota',
             [
-                'attribute'=>'Kota /Kabupaten',
+                'attribute'=>'kota',
                 'value'=>'idKota.nama',
             ],
             'tahun',
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'jumlah_murid_baru',
             // 'jumlah_lulusan_sltp',
             // 'jumlah_murid_lulus_sma',
-            // 'jumlah_murid_tingkat3',
+            // 'jumlah_murid_ikut_ujian',
             // 'jumlah_murid_mengulang',
             // 'longitude',
             // 'latitude',

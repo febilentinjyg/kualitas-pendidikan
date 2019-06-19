@@ -28,20 +28,30 @@ $this->title = 'Kualitas Pendidikan';
                       <th>Angka Partisipasi</th>
                       <th>Tingkat Pelayanan</th>
                       <th>Kualitas Output</th>
+                      <th>Kualitas Pendidikan</th>
                   </tr>
               </thead>
               <tbody>
-                <?php 
+                <?php
+                  $nama_kelas = ['Rendah', 'Tinggi', 'Sangat Tinggi'];
                   $i=0; 
                   foreach ($output as $key => $value) {
-                      echo '<tr>';
-                      echo '<td>'.($i+1).'</td>';
-                      echo '<td>'.$value['nama_kota'].'</td>'; 
-                      echo '<td>'.$value['defuzzifikasi_angka_partisipasi'].'</td>'; 
-                      echo '<td>'.$value['defuzzifikasi_tingkat_pelayanan'].'</td>';
-                      echo '<td>'.$value['defuzzifikasi_kualitas_output'].'</td>';
-                      echo '</tr>';
-                      $i++;
+                    if($value['nilai_kualitas_pendidikan'] <= 4)
+                      $kelas = 'Kurang Baik';
+                    elseif ($value['nilai_kualitas_pendidikan'] <= 7)
+                      $kelas = 'Cukup Baik';
+                    else
+                      $kelas = 'Baik';
+
+                    echo '<tr>';
+                    echo '<td>'.($i+1).'</td>';
+                    echo '<td>'.$value['nama_kota'].'</td>'; 
+                    echo '<td>'.$nama_kelas[$value['kelas_defuzzifikasi_angka_partisipasi']-1] . '(' . round($value['defuzzifikasi_angka_partisipasi'], 2). ')</td>'; 
+                    echo '<td>'.$nama_kelas[$value['kelas_defuzzifikasi_tingkat_pelayanan']-1] . '(' . round($value['defuzzifikasi_tingkat_pelayanan'], 2). ')</td>'; 
+                    echo '<td>'.$nama_kelas[$value['kelas_defuzzifikasi_kualitas_output']-1] . '(' . round($value['defuzzifikasi_kualitas_output'], 2). ')</td>'; 
+                    echo '<td>'.$kelas.'</td>';
+                    echo '</tr>';
+                    $i++;
                   } 
               ?>  
               </tbody>
@@ -52,6 +62,7 @@ $this->title = 'Kualitas Pendidikan';
                       <th>Angka Partisipasi</th>
                       <th>Tingkat Pelayanan</th>
                       <th>Kualitas Output</th>
+                      <th>Kualitas Pendidikan</th>
                   </tr>
                 </tfoot>
           </table>

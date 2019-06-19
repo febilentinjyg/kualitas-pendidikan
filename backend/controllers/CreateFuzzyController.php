@@ -16,7 +16,7 @@ use yii\filters\VerbFilter;
 class CreateFuzzyController extends Controller{
 
 	public function actionFuzzy(){
-		  // return $this->render('fuzzy');
+		 // return $this->render('fuzzy');
 
 // 		$searchModelApk = new IndikatorSearch();
 //           $nilai_min = $searchModelApk->cariMinApk();
@@ -37,7 +37,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//           	if($value['apk'] < $nilai_min){
+//           	if($value['apk'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoriapk[$i] = "R";
 //             }
@@ -59,7 +59,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//           	elseif ($value['apk'] > $nilai_max){
+//           	elseif ($value['apk'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //           		$kategoriapk[$i] = "ST";
 //           	}
@@ -90,7 +90,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['apm'] < $nilai_min){
+//             if($value['apm'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoriapm[$i] = "R";
 //             }
@@ -112,7 +112,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['apm'] > $nilai_max){
+//             elseif ($value['apm'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategoriapm[$i] = "ST";
 //             }
@@ -124,43 +124,43 @@ class CreateFuzzyController extends Controller{
 //             unset($nilaiFuzzy);
 //           }
 
-// //----------------------contoh coding sebelum dimasukkan ke database-------------------------------//
-//     // $searchModelApm = new IndikatorSearch();
-//     //       $nilai_min = $searchModelApm->cariMinApm();
-//     //       $nilai_max = $searchModelApm->cariMaxApm();
+// // //----------------------contoh coding sebelum dimasukkan ke database-------------------------------//
+// //     // $searchModelApm = new IndikatorSearch();
+// //     //       $nilai_min = $searchModelApm->cariMinApm();
+// //     //       $nilai_max = $searchModelApm->cariMaxApm();
 
-//     //       $bagi = ($nilai_max - $nilai_min) / 3;
-//     //       $batas1 = ($nilai_min + $bagi);
-//     //       $batas2 = ($nilai_min + (2*$bagi));
-//     //       $kategoriTmp = [];
-//     //       $i = 0;
-//     //       $kota = $searchModelApm->ambilNilaiApm();
-//     //       foreach ($kota as $key => $value) {
-//     //         if($value['apm'] < $nilai_min)
-//     //           $kategoriapm[$i] = "R";
-//     //         elseif ($value['apm'] > $nilai_min && $value['apm'] < $batas1) {
-//     //           $tinggi = ($value['apm'] - $nilai_min) / ($batas1 - $nilai_min);
-//     //           $rendah = ($batas1 - $value['apm']) / ($batas1 - $nilai_min);
-//     //           $kategoriapm[$i] = number_format($rendah,3)." R & ".number_format($tinggi,3)." T";
-//     //          }
-//     //         elseif ($value['apm'] >= $batas1 && $value['apm'] <= $batas2) {
-//     //           $kategoriapm[$i] = "T";
-//     //          }
-//     //         elseif ($value['apm'] > $batas2 && $value['apm'] < $nilai_max) {
-//     //           $tinggi = ($nilai_max - $value['apm']) / ($nilai_max - $batas2);
-//     //           $sangat_tinggi = ($value['apm'] - $batas2) / ($nilai_max - $batas2);
-//     //           $kategoriapm[$i] = number_format($tinggi,3)." T & ".number_format($sangat_tinggi,3)." ST";
-//     //          }
-//     //         elseif ($value['apm'] > $nilai_max){
-//     //           $kategoriapm[$i] = "ST";
-//     //          }
-//     //         else
-//     //           $kategoriapm[$i] = "ERROR";
+// //     //       $bagi = ($nilai_max - $nilai_min) / 3;
+// //     //       $batas1 = ($nilai_min + $bagi);
+// //     //       $batas2 = ($nilai_min + (2*$bagi));
+// //     //       $kategoriTmp = [];
+// //     //       $i = 0;
+// //     //       $kota = $searchModelApm->ambilNilaiApm();
+// //     //       foreach ($kota as $key => $value) {
+// //     //         if($value['apm'] < $nilai_min)
+// //     //           $kategoriapm[$i] = "R";
+// //     //         elseif ($value['apm'] > $nilai_min && $value['apm'] < $batas1) {
+// //     //           $tinggi = ($value['apm'] - $nilai_min) / ($batas1 - $nilai_min);
+// //     //           $rendah = ($batas1 - $value['apm']) / ($batas1 - $nilai_min);
+// //     //           $kategoriapm[$i] = number_format($rendah,3)." R & ".number_format($tinggi,3)." T";
+// //     //          }
+// //     //         elseif ($value['apm'] >= $batas1 && $value['apm'] <= $batas2) {
+// //     //           $kategoriapm[$i] = "T";
+// //     //          }
+// //     //         elseif ($value['apm'] > $batas2 && $value['apm'] < $nilai_max) {
+// //     //           $tinggi = ($nilai_max - $value['apm']) / ($nilai_max - $batas2);
+// //     //           $sangat_tinggi = ($value['apm'] - $batas2) / ($nilai_max - $batas2);
+// //     //           $kategoriapm[$i] = number_format($tinggi,3)." T & ".number_format($sangat_tinggi,3)." ST";
+// //     //          }
+// //     //         elseif ($value['apm'] > $nilai_max){
+// //     //           $kategoriapm[$i] = "ST";
+// //     //          }
+// //     //         else
+// //     //           $kategoriapm[$i] = "ERROR";
 
-//     //         $i++;
-//     //         }
+// //     //         $i++;
+// //     //         }
 
-// //-----------------------------------------------------------------------------------------------------//
+// // //-----------------------------------------------------------------------------------------------------//
 
 //       // $searchModelTps = new IndikatorSearch();
 //       //     $nilai_min = $searchModelTps->cariMinTps();
@@ -217,7 +217,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if ($value['rmg'] > $nilai_max  || $value['rmg'] > $nilai_ideal){
+//             if ($value['rmg'] >= $nilai_max){
 //               $nilaiFuzzy->rendah = 1;
 //               $kategorirmg[$i] = "R";
 //             }
@@ -239,7 +239,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //               $nilaiFuzzy->tinggi = $tinggi;
 //             }
-//             elseif($value['rmg'] < $nilai_min){
+//             elseif($value['rmg'] <= $nilai_min){
 //               $nilaiFuzzy->sangat_tinggi  = 1;
 //               $kategorirmg[$i] = "ST";
 //             }
@@ -272,7 +272,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['rms'] < $nilai_min){
+//             if($value['rms'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategorirms[$i] = "R";
 //             }
@@ -294,7 +294,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['rms'] > $nilai_max){
+//             elseif ($value['rms'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategorirms[$i] = "ST";
 //             }
@@ -327,7 +327,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if ($value['rmk'] > $nilai_max  || $value['rmk'] > $nilai_ideal){
+//             if ($value['rmk'] >= $nilai_max){
 //               $nilaiFuzzy->rendah = 1;
 //               $kategorirmk[$i] = "R";
 //             }
@@ -349,7 +349,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //               $nilaiFuzzy->tinggi = $tinggi;
 //             }
-//             elseif($value['rmk'] < $nilai_min){
+//             elseif($value['rmk'] <= $nilai_min){
 //               $nilaiFuzzy->sangat_tinggi  = 1;
 //               $kategorirmk[$i] = "R";
 //             }
@@ -382,7 +382,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['rkrk'] < $nilai_min){
+//             if($value['rkrk'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategorirkrk[$i] = "R";
 //             }
@@ -404,7 +404,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['rkrk'] > $nilai_max){
+//             elseif ($value['rkrk'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategorirkrk[$i] = "ST";
 //             }
@@ -437,7 +437,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['prkb'] < $nilai_min){
+//             if($value['prkb'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoriprkb[$i] = "R";
 //             }
@@ -459,7 +459,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['prkb'] > $nilai_max){
+//             elseif ($value['prkb'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategoriprkb[$i] = "ST";
 //             }
@@ -492,7 +492,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['pglm'] < $nilai_min){
+//             if($value['pglm'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoripglm[$i] = "R";
 //             }
@@ -514,7 +514,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['pglm'] > $nilai_max){
+//             elseif ($value['pglm'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategoripglm[$i] = "ST";
 //             }
@@ -546,7 +546,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['am'] < $nilai_min){
+//             if($value['am'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoriam[$i] = "R";
 //             }
@@ -568,7 +568,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['am'] > $nilai_max){
+//             elseif ($value['am'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategoriam[$i] = "ST";
 //             }
@@ -601,7 +601,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['al'] < $nilai_min){
+//             if($value['al'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategorial[$i] = "R";
 //             }
@@ -623,7 +623,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['al'] > $nilai_max){
+//             elseif ($value['al'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategorial[$i] = "ST";
 //             }
@@ -656,7 +656,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['aps'] < $nilai_min){
+//             if($value['aps'] <= $nilai_min){
 //               $nilaiFuzzy->sangat_tinggi  = 1;
 //               $kategoriaps[$i] = "ST";
 //             }
@@ -678,7 +678,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->rendah = $rendah;
 //             }
-//             elseif ($value['aps'] > $nilai_max){
+//             elseif ($value['aps'] >= $nilai_max){
 //               $nilaiFuzzy->rendah = 1;
 //               $kategoriaps[$i] = "R";
 //             }
@@ -711,7 +711,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['au'] < $nilai_min){
+//             if($value['au'] <= $nilai_min){
 //               $nilaiFuzzy->sangat_tinggi  = 1;
 //               $kategoriau[$i] = "ST";
 //             }
@@ -733,7 +733,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->rendah = $rendah;
 //             }
-//             elseif ($value['au'] > $nilai_max){
+//             elseif ($value['au'] >= $nilai_max){
 //               $nilaiFuzzy->rendah = 1;
 //               $kategoriau[$i] = "R";
 //             }
@@ -766,7 +766,7 @@ class CreateFuzzyController extends Controller{
 //             $nilaiFuzzy->rendah       = 0;
 //             $nilaiFuzzy->tinggi       = 0;
 //             $nilaiFuzzy->sangat_tinggi= 0;
-//             if($value['rio'] < $nilai_min){
+//             if($value['rio'] <= $nilai_min){
 //               $nilaiFuzzy->rendah  = 1;
 //               $kategoririo[$i] = "R";
 //             }
@@ -788,7 +788,7 @@ class CreateFuzzyController extends Controller{
 //               $nilaiFuzzy->tinggi = $tinggi;
 //               $nilaiFuzzy->sangat_tinggi = $sangat_tinggi;
 //             }
-//             elseif ($value['rio'] > $nilai_max){
+//             elseif ($value['rio'] >= $nilai_max){
 //               $nilaiFuzzy->sangat_tinggi = 1;
 //               $kategoririo[$i] = "ST";
 //             }
@@ -800,196 +800,196 @@ class CreateFuzzyController extends Controller{
 //             unset($nilaiFuzzy);
 //           }
 
-//-------------------------------------------------------------------------------------------------------
+// //-------------------------------------------------------------------------------------------------------
 
-          // $searchModelAp = new NilaiDefuzzifikasiTigaVariabel();
-          // $nilai_min = $searchModelAp->cariMinAp();
-          // $nilai_max = $searchModelAp->cariMaxAp();
+//           $searchModelAp = new NilaiDefuzzifikasiTigaVariabel();
+//           $nilai_min = $searchModelAp->cariMinAp();
+//           $nilai_max = $searchModelAp->cariMaxAp();
 
-          // $bagi = ($nilai_max - $nilai_min) / 3;
-          // $batas1 = ($nilai_min + $bagi);
-          // $batas2 = ($nilai_min + (2*$bagi));
-          // $kategoriTmp = [];
-          // $i = 0;
-          // $kota = $searchModelAp->ambilNilaiAp();
-          // //return "<pre>".print_r($kota, true)."</pre>";
-          // foreach ($kota as $key => $value) {
+//           $bagi = ($nilai_max - $nilai_min) / 3;
+//           $batas1 = ($nilai_min + $bagi);
+//           $batas2 = ($nilai_min + (2*$bagi));
+//           $kategoriTmp = [];
+//           $i = 0;
+//           $kota = $searchModelAp->ambilNilaiAp();
+//           //return "<pre>".print_r($kota, true)."</pre>";
+//           foreach ($kota as $key => $value) {
 
-          //   $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
-          //   $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
-          //   $nilaiFuzzyTigaVariabel->indikator    = 'angka_partisipasi';
-          //   $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
-          //   $nilaiFuzzyTigaVariabel->baik         = 0;
-          //   $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
-          //   if($value['angka_partisipasi'] <= $nilai_min){
-          //     $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
-          //     $kategoriap[$i] = "KB";
-          //   }
-          //   elseif ($value['angka_partisipasi'] > $nilai_min && $value['angka_partisipasi'] < $batas1) {
-          //     $baik = ($value['angka_partisipasi'] - $nilai_min) / ($batas1 - $nilai_min);
-          //     $kurang_baik = ($batas1 - $value['angka_partisipasi']) / ($batas1 - $nilai_min);
-          //     $kategoriap[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
-          //     $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //   }
-          //   elseif ($value['angka_partisipasi'] >= $batas1 && $value['angka_partisipasi'] <= $batas2) {
-          //     $nilaiFuzzyTigaVariabel->baik = 1;
-          //     $kategoriap[$i]  = "B";
-          //   }
-          //   elseif ($value['angka_partisipasi'] > $batas2 && $value['angka_partisipasi'] < $nilai_max) {
-          //     $baik = ($nilai_max - $value['angka_partisipasi']) / ($nilai_max - $batas2);
-          //     $sangat_baik = ($value['angka_partisipasi'] - $batas2) / ($nilai_max - $batas2);
-          //     $kategoriap[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
-          //   }
-          //   elseif ($value['angka_partisipasi'] >= $nilai_max){
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = 1;
-          //     $kategoriap[$i] = "SB";
-          //   }
-          //   else{
-          //     $kategoriap[$i] = "ERROR";
-          //   }
-          //   $i++;
-          //   $nilaiFuzzyTigaVariabel->save();
-          //   unset($nilaiFuzzyTigaVariabel);
-
-            
-          // }
-
-	//-------------------------------------------------------------------------------------------------------
-
-          // $searchModelTp = new NilaiDefuzzifikasiTigaVariabel();
-          // $nilai_min = $searchModelTp->cariMinTp();
-          // $nilai_max = $searchModelTp->cariMaxTp();
-
-          // $bagi = ($nilai_max - $nilai_min) / 3;
-          // $batas1 = ($nilai_min + $bagi);
-          // $batas2 = ($nilai_min + (2*$bagi));
-          // $kategoriTmp = [];
-          // $i = 0;
-          // $kota = $searchModelTp->ambilNilaiTp();
-          // //return "<pre>".print_r($kota, true)."</pre>";
-          // foreach ($kota as $key => $value) {
-
-          //   $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
-          //   $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
-          //   $nilaiFuzzyTigaVariabel->indikator    = 'tingkat_pelayanan';
-          //   $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
-          //   $nilaiFuzzyTigaVariabel->baik         = 0;
-          //   $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
-          //   if($value['tingkat_pelayanan'] <= $nilai_min){
-          //     $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
-          //     $kategoritp[$i] = "KB";
-          //   }
-          //   elseif ($value['tingkat_pelayanan'] > $nilai_min && $value['tingkat_pelayanan'] < $batas1) {
-          //     $baik = ($value['tingkat_pelayanan'] - $nilai_min) / ($batas1 - $nilai_min);
-          //     $kurang_baik = ($batas1 - $value['tingkat_pelayanan']) / ($batas1 - $nilai_min);
-          //     $kategoritp[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
-          //     $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //   }
-          //   elseif ($value['tingkat_pelayanan'] >= $batas1 && $value['tingkat_pelayanan'] <= $batas2) {
-          //     $nilaiFuzzyTigaVariabel->baik = 1;
-          //     $kategoritp[$i]  = "B";
-          //   }
-          //   elseif ($value['tingkat_pelayanan'] > $batas2 && $value['tingkat_pelayanan'] < $nilai_max) {
-          //     $baik = ($nilai_max - $value['tingkat_pelayanan']) / ($nilai_max - $batas2);
-          //     $sangat_baik = ($value['tingkat_pelayanan'] - $batas2) / ($nilai_max - $batas2);
-          //     $kategoritp[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
-          //   }
-          //   elseif ($value['tingkat_pelayanan'] >= $nilai_max){
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = 1;
-          //     $kategoritp[$i] = "SB";
-          //   }
-          //   else{
-          //     $kategoritp[$i] = "ERROR";
-          //   }
-          //   $i++;
-          //   $nilaiFuzzyTigaVariabel->save();
-          //   unset($nilaiFuzzyTigaVariabel);
+//             $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
+//             $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
+//             $nilaiFuzzyTigaVariabel->indikator    = 'angka_partisipasi';
+//             $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
+//             $nilaiFuzzyTigaVariabel->baik         = 0;
+//             $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
+//             if($value['angka_partisipasi'] <= $nilai_min){
+//               $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
+//               $kategoriap[$i] = "KB";
+//             }
+//             elseif ($value['angka_partisipasi'] > $nilai_min && $value['angka_partisipasi'] < $batas1) {
+//               $baik = ($value['angka_partisipasi'] - $nilai_min) / ($batas1 - $nilai_min);
+//               $kurang_baik = ($batas1 - $value['angka_partisipasi']) / ($batas1 - $nilai_min);
+//               $kategoriap[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
+//               $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//             }
+//             elseif ($value['angka_partisipasi'] >= $batas1 && $value['angka_partisipasi'] <= $batas2) {
+//               $nilaiFuzzyTigaVariabel->baik = 1;
+//               $kategoriap[$i]  = "B";
+//             }
+//             elseif ($value['angka_partisipasi'] > $batas2 && $value['angka_partisipasi'] < $nilai_max) {
+//               $baik = ($nilai_max - $value['angka_partisipasi']) / ($nilai_max - $batas2);
+//               $sangat_baik = ($value['angka_partisipasi'] - $batas2) / ($nilai_max - $batas2);
+//               $kategoriap[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//               $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
+//             }
+//             elseif ($value['angka_partisipasi'] >= $nilai_max){
+//               $nilaiFuzzyTigaVariabel->sangat_baik = 1;
+//               $kategoriap[$i] = "SB";
+//             }
+//             else{
+//               $kategoriap[$i] = "ERROR";
+//             }
+//             $i++;
+//             $nilaiFuzzyTigaVariabel->save();
+//             unset($nilaiFuzzyTigaVariabel);
 
             
-          // }   
+//           }
 
-		//-------------------------------------------------------------------------------------------------------
+// //	-------------------------------------------------------------------------------------------------------
 
-          // $searchModelKo = new NilaiDefuzzifikasiTigaVariabel();
-          // $nilai_min = $searchModelKo->cariMinKo();
-          // $nilai_max = $searchModelKo->cariMaxKo();
+//           $searchModelTp = new NilaiDefuzzifikasiTigaVariabel();
+//           $nilai_min = $searchModelTp->cariMinTp();
+//           $nilai_max = $searchModelTp->cariMaxTp();
 
-          // $bagi = ($nilai_max - $nilai_min) / 3;
-          // $batas1 = ($nilai_min + $bagi);
-          // $batas2 = ($nilai_min + (2*$bagi));
-          // $kategoriTmp = [];
-          // $i = 0;
-          // $kota = $searchModelKo->ambilNilaiKo();
-          // //return "<pre>".print_r($kota, true)."</pre>";
-          // foreach ($kota as $key => $value) {
+//           $bagi = ($nilai_max - $nilai_min) / 3;
+//           $batas1 = ($nilai_min + $bagi);
+//           $batas2 = ($nilai_min + (2*$bagi));
+//           $kategoriTmp = [];
+//           $i = 0;
+//           $kota = $searchModelTp->ambilNilaiTp();
+//           //return "<pre>".print_r($kota, true)."</pre>";
+//           foreach ($kota as $key => $value) {
 
-          //   $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
-          //   $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
-          //   $nilaiFuzzyTigaVariabel->indikator    = 'kualitas_output';
-          //   $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
-          //   $nilaiFuzzyTigaVariabel->baik         = 0;
-          //   $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
-          //   if($value['kualitas_output'] <= $nilai_min){
-          //     $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
-          //     $kategoriko[$i] = "KB";
-          //   }
-          //   elseif ($value['kualitas_output'] > $nilai_min && $value['kualitas_output'] < $batas1) {
-          //     $baik = ($value['kualitas_output'] - $nilai_min) / ($batas1 - $nilai_min);
-          //     $kurang_baik = ($batas1 - $value['kualitas_output']) / ($batas1 - $nilai_min);
-          //     $kategoriko[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
-          //     $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //   }
-          //   elseif ($value['kualitas_output'] >= $batas1 && $value['kualitas_output'] <= $batas2) {
-          //     $nilaiFuzzyTigaVariabel->baik = 1;
-          //     $kategoriko[$i]  = "B";
-          //   }
-          //   elseif ($value['kualitas_output'] > $batas2 && $value['kualitas_output'] < $nilai_max) {
-          //     $baik = ($nilai_max - $value['kualitas_output']) / ($nilai_max - $batas2);
-          //     $sangat_baik = ($value['kualitas_output'] - $batas2) / ($nilai_max - $batas2);
-          //     $kategoriko[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
-          //     $nilaiFuzzyTigaVariabel->baik = $baik;
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
-          //   }
-          //   elseif ($value['kualitas_output'] >= $nilai_max){
-          //     $nilaiFuzzyTigaVariabel->sangat_baik = 1;
-          //     $kategoriko[$i] = "SB";
-          //   }
-          //   else{
-          //     $kategoriko[$i] = "ERROR";
-          //   }
-          //   $i++;
-          //   $nilaiFuzzyTigaVariabel->save();
-          //   unset($nilaiFuzzyTigaVariabel);
+//             $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
+//             $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
+//             $nilaiFuzzyTigaVariabel->indikator    = 'tingkat_pelayanan';
+//             $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
+//             $nilaiFuzzyTigaVariabel->baik         = 0;
+//             $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
+//             if($value['tingkat_pelayanan'] <= $nilai_min){
+//               $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
+//               $kategoritp[$i] = "KB";
+//             }
+//             elseif ($value['tingkat_pelayanan'] > $nilai_min && $value['tingkat_pelayanan'] < $batas1) {
+//               $baik = ($value['tingkat_pelayanan'] - $nilai_min) / ($batas1 - $nilai_min);
+//               $kurang_baik = ($batas1 - $value['tingkat_pelayanan']) / ($batas1 - $nilai_min);
+//               $kategoritp[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
+//               $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//             }
+//             elseif ($value['tingkat_pelayanan'] >= $batas1 && $value['tingkat_pelayanan'] <= $batas2) {
+//               $nilaiFuzzyTigaVariabel->baik = 1;
+//               $kategoritp[$i]  = "B";
+//             }
+//             elseif ($value['tingkat_pelayanan'] > $batas2 && $value['tingkat_pelayanan'] < $nilai_max) {
+//               $baik = ($nilai_max - $value['tingkat_pelayanan']) / ($nilai_max - $batas2);
+//               $sangat_baik = ($value['tingkat_pelayanan'] - $batas2) / ($nilai_max - $batas2);
+//               $kategoritp[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//               $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
+//             }
+//             elseif ($value['tingkat_pelayanan'] >= $nilai_max){
+//               $nilaiFuzzyTigaVariabel->sangat_baik = 1;
+//               $kategoritp[$i] = "SB";
+//             }
+//             else{
+//               $kategoritp[$i] = "ERROR";
+//             }
+//             $i++;
+//             $nilaiFuzzyTigaVariabel->save();
+//             unset($nilaiFuzzyTigaVariabel);
 
-          // }
+            
+//           }   
+
+// //		-------------------------------------------------------------------------------------------------------
+
+//           $searchModelKo = new NilaiDefuzzifikasiTigaVariabel();
+//           $nilai_min = $searchModelKo->cariMinKo();
+//           $nilai_max = $searchModelKo->cariMaxKo();
+
+//           $bagi = ($nilai_max - $nilai_min) / 3;
+//           $batas1 = ($nilai_min + $bagi);
+//           $batas2 = ($nilai_min + (2*$bagi));
+//           $kategoriTmp = [];
+//           $i = 0;
+//           $kota = $searchModelKo->ambilNilaiKo();
+//           //return "<pre>".print_r($kota, true)."</pre>";
+//           foreach ($kota as $key => $value) {
+
+//             $nilaiFuzzyTigaVariabel = new NilaiFuzzyTigaVariabel();
+//             $nilaiFuzzyTigaVariabel->id_kota      = $value['id_kota'];
+//             $nilaiFuzzyTigaVariabel->indikator    = 'kualitas_output';
+//             $nilaiFuzzyTigaVariabel->kurang_baik  = 0;
+//             $nilaiFuzzyTigaVariabel->baik         = 0;
+//             $nilaiFuzzyTigaVariabel->sangat_baik  = 0;
+//             if($value['kualitas_output'] <= $nilai_min){
+//               $nilaiFuzzyTigaVariabel->kurang_baik  = 1;
+//               $kategoriko[$i] = "KB";
+//             }
+//             elseif ($value['kualitas_output'] > $nilai_min && $value['kualitas_output'] < $batas1) {
+//               $baik = ($value['kualitas_output'] - $nilai_min) / ($batas1 - $nilai_min);
+//               $kurang_baik = ($batas1 - $value['kualitas_output']) / ($batas1 - $nilai_min);
+//               $kategoriko[$i] = number_format($kurang_baik,5)." KB & ".number_format($baik,5)." B";
+//               $nilaiFuzzyTigaVariabel->kurang_baik = $kurang_baik;
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//             }
+//             elseif ($value['kualitas_output'] >= $batas1 && $value['kualitas_output'] <= $batas2) {
+//               $nilaiFuzzyTigaVariabel->baik = 1;
+//               $kategoriko[$i]  = "B";
+//             }
+//             elseif ($value['kualitas_output'] > $batas2 && $value['kualitas_output'] < $nilai_max) {
+//               $baik = ($nilai_max - $value['kualitas_output']) / ($nilai_max - $batas2);
+//               $sangat_baik = ($value['kualitas_output'] - $batas2) / ($nilai_max - $batas2);
+//               $kategoriko[$i] = number_format($baik,5)." B & ".number_format($sangat_baik,5)." SB";
+//               $nilaiFuzzyTigaVariabel->baik = $baik;
+//               $nilaiFuzzyTigaVariabel->sangat_baik = $sangat_baik;
+//             }
+//             elseif ($value['kualitas_output'] >= $nilai_max){
+//               $nilaiFuzzyTigaVariabel->sangat_baik = 1;
+//               $kategoriko[$i] = "SB";
+//             }
+//             else{
+//               $kategoriko[$i] = "ERROR";
+//             }
+//             $i++;
+//             $nilaiFuzzyTigaVariabel->save();
+//             unset($nilaiFuzzyTigaVariabel);
+
+//           }
           
-        //     return $this->render('fuzzy', [
-        //     'data' => $kota,
-        //     // 'hasilapk' => $kategoriapk,
-        //     // 'hasilapm' => $kategoriapm,
-        //     // // 'hasiltps' => $kategoritps,
-        //     // 'hasilrmg' => $kategorirmg,
-        //     // 'hasilrms' => $kategorirms,
-        //     // 'hasilrmk' => $kategorirmk,
-        //     // 'hasilrkrk' => $kategorirkrk,
-        //     // 'hasilprkb' => $kategoriprkb,
-        //     // 'hasilpglm' => $kategoripglm,
-        //     // 'hasilam' => $kategoriam,
-        //     // 'hasilal' => $kategorial,
-        //     // 'hasilaps' => $kategoriaps,
-        //     // 'hasilau' => $kategoriau,
-        //     // 'hasilrio' => $kategoririo,
-        //     // 'hasilap' => $kategoriap,
-        //     // 'hasiltp' => $kategoritp,
-        //     'hasilko' => $kategoriko,
-        // ]);
+            return $this->render('fuzzy', [
+            // 'data' => $kota,
+            // 'hasilapk' => $kategoriapk,
+            // 'hasilapm' => $kategoriapm,
+            // // 'hasiltps' => $kategoritps,
+            // 'hasilrmg' => $kategorirmg,
+            // 'hasilrms' => $kategorirms,
+            // 'hasilrmk' => $kategorirmk,
+            // 'hasilrkrk' => $kategorirkrk,
+            // 'hasilprkb' => $kategoriprkb,
+            // 'hasilpglm' => $kategoripglm,
+            // 'hasilam' => $kategoriam,
+            // 'hasilal' => $kategorial,
+            // 'hasilaps' => $kategoriaps,
+            // 'hasilau' => $kategoriau,
+            // 'hasilrio' => $kategoririo,
+            // 'hasilap' => $kategoriap,
+            // 'hasiltp' => $kategoritp,
+            // 'hasilko' => $kategoriko,
+        ]);
      }     
 }
 

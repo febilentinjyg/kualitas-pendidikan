@@ -29,49 +29,56 @@ $this->title = 'Kualitas Pendidikan';
                             <th>Angka Partisipasi</th>
                             <th>Tingkat Pelayanan</th>
                             <th>Kualitas Output</th>
-                            <th>NILAI</th>
+                            <th>KUALITAS PENDIDIKAN</th>
                             </tr>
                     </thead>
                     <tbody>
                         <?php 
                             $i=0; 
                             foreach ($output as $key => $value) {
+                              if($value['nilai_kualitas_pendidikan'] <= 4)
+                                $kelas = 'Kurang Baik';
+                              elseif ($value['nilai_kualitas_pendidikan'] <= 7)
+                                $kelas = 'Cukup Baik';
+                              else
+                                $kelas = 'Baik';
+
                                 echo '<tr>';
                                 // kriteria angka partisipasi
                                 echo '<td>'.$value['id'].'</td>'; 
                                 if ($value['kriteria_angka_partisipasi']==1) {
-                                  echo '<td>'.'Kurang Baik'.'</td>';
+                                  echo '<td>'.'Rendah'.'</td>';
                                 }
                                 elseif ($value['kriteria_angka_partisipasi']==2) {
-                                  echo '<td>'.'Baik'.'</td>';
+                                  echo '<td>'.'Tinggi'.'</td>';
                                 }
                                 elseif ($value['kriteria_angka_partisipasi']==3) {
-                                  echo '<td>'.'Sangat Baik'.'</td>';
+                                  echo '<td>'.'Sangat Tinggi'.'</td>';
                                 }
                                 
                                 // kriteria tingkat pelayanan
                                 if ($value['kriteria_tingkat_pelayanan']==1) {
-                                  echo '<td>'.'Kurang Baik'.'</td>';
+                                  echo '<td>'.'Rendah'.'</td>';
                                 }
                                 elseif ($value['kriteria_tingkat_pelayanan']==2) {
-                                  echo '<td>'.'Baik'.'</td>';
+                                  echo '<td>'.'Tinggi'.'</td>';
                                 }
                                 elseif ($value['kriteria_tingkat_pelayanan']==3) {
-                                  echo '<td>'.'Sangat Baik'.'</td>';
+                                  echo '<td>'.'Sangat Tinggi'.'</td>';
                                 }
 
                                 //kriteria kualitas output
                                 if ($value['kriteria_kualitas_output']==1) {
-                                  echo '<td>'.'Kurang Baik'.'</td>';
+                                  echo '<td>'.'Rendah'.'</td>';
                                 }
                                 elseif ($value['kriteria_kualitas_output']==2) {
-                                  echo '<td>'.'Baik'.'</td>';
+                                  echo '<td>'.'Tinggi'.'</td>';
                                 }
                                 elseif ($value['kriteria_kualitas_output']==3) {
-                                  echo '<td>'.'Sangat Baik'.'</td>';
+                                  echo '<td>'.'Sangat Tinggi'.'</td>';
                                 }
 
-                                echo '<td>'.$value['nilai_kualitas_pendidikan'].'</td>'; 
+                                echo '<td>'.$kelas.'</td>'; 
                                 echo '</tr>';
                                 $i++;
                             } 
@@ -83,7 +90,7 @@ $this->title = 'Kualitas Pendidikan';
                           <th>Angka Partisipasi</th>
                           <th>Tingkat Pelayanan</th>
                           <th>Kualitas Output</th>
-                          <th>NILAI</th>
+                          <th>KUALITAS PENDIDIKAN</th>
                         </tr>
                     </tfoot>
                 </table>
