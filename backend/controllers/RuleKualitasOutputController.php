@@ -17,25 +17,26 @@ class RuleKualitasOutputController extends \yii\web\Controller
 	 public function actionRule()
      {
     	
-  //   	for ($am=1; $am<=3; $am++){
-  //   		for ($al=1; $al<=3; $al++){
-  //   			for ($aps=1; $aps<=3; $aps++){
-  //   				for ($au=1; $au<=3; $au++){
-  //   					for ($rio=1; $rio<=3; $rio++){
-  //   						$model = new RuleKualitasOutput();
-		// 		    		$nilai = $am + $al + $aps + $au + $rio;
-		// 		    		$model->kriteria_am = $am;
-		// 		    		$model->kriteria_al = $al;
-		// 		    		$model->kriteria_aps = $aps;
-		// 		    		$model->kriteria_au = $au;
-		// 		    		$model->kriteria_rio = $rio;
-		// 		    		$model->nilai_kualitas_output = $nilai;
-		// 		    		$model->save();
-		// 		    	}
-		// 		    }
-		// 		}
-  //       	}
-  //       }
+    // 	for ($am=1; $am<=3; $am++){
+    // 		for ($al=1; $al<=3; $al++){
+    // 			for ($aps=1; $aps<=3; $aps++){
+    // 				for ($au=1; $au<=3; $au++){
+    // 					for ($rio=1; $rio<=3; $rio++){
+    // 						$model = new RuleKualitasOutput();
+				//     		$nilai = $am + $al + $aps + $au + $rio;
+				//     		$model->kriteria_am = $am;
+				//     		$model->kriteria_al = $al;
+				//     		$model->kriteria_aps = $aps;
+				//     		$model->kriteria_au = $au;
+				//     		$model->kriteria_rio = $rio;
+				//     		$model->nilai_kualitas_output = $nilai;
+				//     		$model->save();
+				//     	}
+				//     }
+				// }
+    //     	}
+    //     }
+        
      	$model = RuleKualitasOutput::find()->all();
     	return $this->render('index', [
     		'active' => 'rule_ko',

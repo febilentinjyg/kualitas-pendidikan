@@ -87,43 +87,95 @@ use yii\helpers\Url;
               <div class="tab-pane active" id="tab_1">
                 <?php 
                     if ($active=='apk') {
-                        echo '<b>ANGKA PARTISIPASI KASAR</b>';
+                        echo '<b>ANGKA PARTISIPASI KASAR TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/apk.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='apm') {
-                        echo '<b>ANGKA PARTISIPASI MURNI</b>';
+                        echo '<b>ANGKA PARTISIPASI MURNI TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/apm.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='rmg') {
-                        echo '<b>RASIO MURID GURU</b>';
+                        echo '<b>RASIO MURID GURU TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/rmg.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='rms') {
-                        echo '<b>RASIO MURID SEKOLAH</b>';
+                        echo '<b>RASIO MURID SEKOLAH TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/rms.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='rmk') {
-                        echo '<b>RASIO MURID KELAS</b>';
+                        echo '<b>RASIO MURID KELAS TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/rmk.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='rkrk') {
-                        echo '<b>RASIO KELAS RUANG KELAS</b>';
+                        echo '<b>RASIO KELAS RUANG KELAS TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/rkrk.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='prkb') {
-                        echo '<b>PRESENTASE RUANG KELAS BAIK</b>';
+                        echo '<b>PRESENTASE RUANG KELAS BAIK TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/prkb.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='pglm') {
-                        echo '<b>PERSENTASE GURU LAYAK MENGAJAR</b>';
+                        echo '<b>PERSENTASE GURU LAYAK MENGAJAR TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/pglm.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='am') {
-                        echo '<b>ANGKA MELANJUTKAN</b>';
+                        echo '<b>ANGKA MELANJUTKAN TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/am.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='al') {
-                        echo '<b>ANGKA LULUSAN</b>';
+                        echo '<b>ANGKA LULUSAN TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/al.JPG']).'" width="250px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='aps') {
-                        echo '<b>ANGKA PUTUS SEKOLAH</b>';
+                        echo '<b>ANGKA PUTUS SEKOLAH TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/aps.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='au') {
-                        echo '<b>ANGKA MENGULANG</b>';
+                        echo '<b>ANGKA MENGULANG TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/au.JPG']).'" width="300px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                     if ($active=='rio') {
-                        echo '<b>RASIO INPUT OUTPUT</b>';
+                        echo '<b>RASIO INPUT OUTPUT TAHUN PELAJARAN 2017/2018</b>';
+                        echo '<br>';
+                        echo '<img src="'.Url::to(['images/rio.JPG']).'" width="350px"/>' ;
+                        echo '<br>';
+                        echo '<br>';
                     }
                 ?>
                 

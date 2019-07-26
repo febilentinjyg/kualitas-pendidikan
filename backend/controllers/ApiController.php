@@ -254,14 +254,17 @@ class ApiController extends \yii\web\Controller
             [
                 'name' => 'Kurang Baik',
                 'y' => $jumlah_kurangbaik,
+                'color' => '#FF0000'
             ],
             [
                 'name' => 'Cukup Baik',
                 'y' => $jumlah_cukupbaik,
+                'color' => '#FFFF33'
             ],
             [
                 'name' => 'Baik',
                 'y' => $jumlah_baik,
+                'color' => '#00FF00'
             ],
         ]);
     }

@@ -20,7 +20,8 @@ $.getJSON('http://localhost:8080/tugasAkhir/backend/web/api/grafik-kualitas-pend
         text: 'Persentase Kualitas Pendidikan Tingkat SLTA di Jawa Timur'
     },
     tooltip: {
-        pointFormat: '{point.name}: <b>{point.y}</b>'
+        
+        pointFormat: '<b>{point.percentage:.1f}%</b>'
     },
     plotOptions: {
         pie: {
@@ -46,6 +47,6 @@ JS
 );
 ?>
 
-  	<section class="content" id="container"   style="height: 500px">                    
+  	<section class="content" id="container"   style="height: 450px">                    
       
     </section>
